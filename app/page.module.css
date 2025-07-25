@@ -1,78 +1,121 @@
 .container {
   min-height: 100vh;
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.heroBackground img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroContent {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  margin-top: -100px;
 }
 
 .heroContent h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: bold;
-}
-
-.heroContent p {
-  font-size: 1.3rem;
-  color: #666;
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
 .subtitle {
-  font-size: 1.1rem !important;
+  font-size: 1rem !important;
   margin-bottom: 2rem !important;
+  color: white;
+  opacity: 0.9;
+  font-weight: 300;
 }
 
 .heroButtons {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .primaryButton,
 .secondaryButton {
-  padding: 1rem 2rem;
-  border-radius: 5px;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .primaryButton {
-  background: #007bff;
+  background: rgba(23, 26, 32, 0.8);
   color: white;
+  border: 3px solid rgba(23, 26, 32, 0.8);
 }
 
 .primaryButton:hover {
-  background: #0056b3;
+  background: rgba(23, 26, 32, 1);
+  border-color: rgba(23, 26, 32, 1);
 }
 
 .secondaryButton {
   background: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0.8);
 }
 
 .secondaryButton:hover {
-  background: #007bff;
-  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
 }
 
-.heroImage img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 15px;
+.heroNavigation {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .features {
@@ -270,13 +313,6 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-
   .heroContent h1 {
     font-size: 2.5rem;
   }
@@ -284,6 +320,23 @@
   .heroButtons {
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 200px;
+    text-align: center;
+  }
+
+  .heroNavigation {
+    bottom: 30px;
+  }
+
+  .navButton {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
   }
 
   .featuresContainer,

@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          AutoShow
+          TESLA
         </Link>
         
         <div className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>

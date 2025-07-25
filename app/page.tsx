@@ -26,20 +26,23 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
+        <div className={styles.heroBackground}>
+          <img 
+            src="/tesla-model-y-banner.avif" 
+            alt="全新 Model Y"
+          />
+        </div>
         <div className={styles.heroContent}>
-          <h1>AutoShow</h1>
-          <p>精選優質汽車，專業服務體驗</p>
-          <p className={styles.subtitle}>為您提供最完整的汽車銷售服務，讓購車成為一種享受</p>
+          <h1>全新 Model Y</h1>
+          <p className={styles.subtitle}>預估交車期</p>
           <div className={styles.heroButtons}>
-            <Link href="/cars" className={styles.primaryButton}>瀏覽車款</Link>
+            <Link href="/cars" className={styles.primaryButton}>立即訂購</Link>
             <Link href="/about" className={styles.secondaryButton}>了解更多</Link>
           </div>
         </div>
-        <div className={styles.heroImage}>
-          <img 
-            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop&crop=center" 
-            alt="豪華汽車展示"
-          />
+        <div className={styles.heroNavigation}>
+          <button className={styles.navButton}>‹</button>
+          <button className={styles.navButton}>›</button>
         </div>
       </section>
 
